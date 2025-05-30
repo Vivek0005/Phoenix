@@ -6,3 +6,4 @@ prisma/generated/
 
 .vscode/
     
+/src/generated/prisma
