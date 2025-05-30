@@ -7,3 +7,5 @@ prisma/generated/
 .vscode/
     
 /src/generated/prisma
+
+imf challenge.txt
