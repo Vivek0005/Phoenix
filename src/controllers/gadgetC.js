@@ -59,12 +59,14 @@ exports.createGadget = async (req, res) => {
             return res.status(400).json({ message: `Invalid status value. Allowed values are: ${validStatuses.join(", ")}` });
         }
 
-        const newGadget = await prisma.gadget.create({
-            data: {
-                name: generateCodename(),
-                status: status || "Available"
-            }
-        });
+        const data = {
+            name: generateCodename(),
+            status: status || "Available",
+
+            ...(status === "Decommissioned" && { decommissionedAt: new Date() }),
+        };
+
+        const newGadget = await prisma.gadget.create({ data });
 
         console.log("Gadget successfully created");
         res.status(201).json(newGadget);
