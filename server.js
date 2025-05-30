@@ -10,7 +10,7 @@ app.use("/auth", authRoutes);
 
 // home page
 app.get("/", (req, res) => {
-    res.send("IMF GADGETS HOME PAGE");
+    res.send("IMF GADGETS HOME PAGE, Please go to /gadgets");
 })
 
 // start server
