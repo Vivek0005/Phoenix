@@ -1,0 +1,1 @@
+module.exports = ["Available", "Deployed", "Destroyed", "Decommissioned"];
